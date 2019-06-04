@@ -3,3 +3,6 @@ lib/
 share/
 bin/
 .vscode
+__pycache__/
+migrations/
+db.sqlite3
