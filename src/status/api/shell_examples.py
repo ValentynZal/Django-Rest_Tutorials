@@ -2,7 +2,6 @@
 run file with: python manage.py shell
 """
 
-# import json
 from django.utils.six import BytesIO
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -11,6 +10,7 @@ from status.models import Status
 
 
 ''' Serialize a single object '''
+# import json
 obj = Status.objects.first()
 serializer = StatusSerializers(obj)
 serializer.data                                         # dictionary
@@ -36,6 +36,7 @@ print(data2)
 
 ''' Create Obj '''
 data = {'user': 1, 'content': 'was ist das?'}
+data = {'user': 1}
 create_obj_serializer = StatusSerializers(data=data)
 create_obj_serializer.is_valid()
 create_obj = create_obj_serializer.save()
@@ -52,3 +53,15 @@ print(update_serializer.content)
 ''' Delete Obj '''
 obj = Status.objects.first()
 print(obj.delete())
+
+# from rest_framework import serializers
+# class CustomSerializer(serializers.Serializer):
+#     content = serializers.CharField()
+#     email = serializers.EmailField()
+
+
+# data = {'email': 'hello@mail.com', 'content': 'egfygef'}
+# create_obj_serializer = StatusSerializers(data=data)
+# if create_obj_serializer.is_valid():
+#     data = create_obj_serializer.data
+#     print(data)

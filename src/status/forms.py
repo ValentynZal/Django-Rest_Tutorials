@@ -22,7 +22,7 @@ class StatusForm(forms.ModelForm):
         image = data.get('image', None)
         if content == "":
             contect = None
-        # if content is None and image is None:
-        #     raise forms.ValidationError('Content and image is required')
-        # return super().clean(*args, **kwargs)
+        if content is None and image is None:
+            raise forms.ValidationError('Content or image is required')
+        return super().clean(*args, **kwargs)
 
