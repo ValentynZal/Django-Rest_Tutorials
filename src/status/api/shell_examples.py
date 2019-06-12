@@ -54,14 +54,3 @@ print(update_serializer.content)
 obj = Status.objects.first()
 print(obj.delete())
 
-# from rest_framework import serializers
-# class CustomSerializer(serializers.Serializer):
-#     content = serializers.CharField()
-#     email = serializers.EmailField()
-
-
-# data = {'email': 'hello@mail.com', 'content': 'egfygef'}
-# create_obj_serializer = StatusSerializers(data=data)
-# if create_obj_serializer.is_valid():
-#     data = create_obj_serializer.data
-#     print(data)

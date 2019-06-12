@@ -6,6 +6,7 @@ class StatusSerializers(serializers.ModelSerializer):
     class Meta:
         model = Status
         fields = [
+            'id',
             'user',
             'content',
             'image'
