@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # third party package
     'rest_framework',
     # local
+    'accounts',
     'status',
     'updates',
 ]
