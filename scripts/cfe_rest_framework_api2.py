@@ -38,15 +38,15 @@ data3 = {
 }
 
 data4 = {
-    'username': 'bro',
-    'email': 'bro@gmail.com',
-    'password': 'brobro',
-    'password2': 'brobro',   
+    'username': 'bro3',
+    'email': 'bro3@gmail.com',
+    'password': 'bro3bro3',
+    'password2': 'bro3bro3',   
 }
 
-r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
-r2 = requests.post(REGISTER_ENDPOINT, data=json.dumps(data2), headers=headers2)
-r3 = requests.post(REGISTER_ENDPOINT, data=json.dumps(data3), headers=headers2)
+# r = requests.post(AUTH_ENDPOINT, data=json.dumps(data), headers=headers)
+# r2 = requests.post(REGISTER_ENDPOINT, data=json.dumps(data2), headers=headers2)
+# r3 = requests.post(REGISTER_ENDPOINT, data=json.dumps(data3), headers=headers2)
 r4 = requests.post(REGISTER_ENDPOINT, data=json.dumps(data4), headers=headers2)
 # token = r.json()#['token']
 # print(token)
