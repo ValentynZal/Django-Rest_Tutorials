@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from updates.api.utils import is_json
 from json import loads, dumps
 from rest_framework.authentication import SessionAuthentication
+from accounts.api.permissions import *
 
 
 class StatusDetailAPIView(
@@ -18,8 +19,7 @@ class StatusDetailAPIView(
     # permission_classes = []
     # authentication_classe = []   
     # or
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    # authentication_classe = [SessionAuthentication]   # JWT
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
     serializer_class = StatusSerializers
     queryset = Status.objects.all()    
     lookup_field = 'id'
@@ -38,12 +38,7 @@ class StatusAPIView(
     mixins.CreateModelMixin, 
     generics.ListAPIView
 ):
-    # comment if you use default classes
-    # permission_classes = []
-    # authentication_classe = []   
-    # or
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    # authentication_classe = [SessionAuthentication]   # JWT
     serializer_class = StatusSerializers
     passed_id = None
 
